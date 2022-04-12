@@ -8,6 +8,7 @@ use App\Models\Service;
 use App\Models\Slider;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -28,7 +29,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if (Auth::user()->user_type == 0){
+            return $this->fronted();
+        } elseif (Auth::user()->user_type == 1){
+            return view('home');
+        }
     }
 
     public function slider()

@@ -37,7 +37,7 @@
                     </ul></li>
                 <li><a href="">Web-programming</a></li>
                 <li><a href="">Drop-Portfolio</a></li>
-                <li><a href="">SignUp/Login</a></li>
+                <li><a href="{{route('login')}}">SignUp/Login</a></li>
                 <li><a href="">Contact</a></li>
             </ul></div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
