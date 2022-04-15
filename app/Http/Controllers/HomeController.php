@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-//use App\ImageUploads\Images;
-use App\Models\EmailFeedback;
+use App\ImageUploads\Images;
+use App\Models\Facilities;
+use App\Models\Portfolio;
 use App\Models\Service;
 use App\Models\Slider;
 use Carbon\Carbon;
@@ -30,7 +31,7 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::user()->user_type == 0){
-            return $this->fronted();
+            return view('portfolio');
         } elseif (Auth::user()->user_type == 1){
             return view('home');
         }
@@ -46,19 +47,29 @@ class HomeController extends Controller
         $images = Slider::active()->get();
         $services = Service::where('is_active', '=', 1)
             ->get();
-        return view('frontend.home', compact('images', 'services'));
+        $facilities = Facilities::active()->get();
+        return view('frontend.home', compact('images', 'services', 'facilities'));
     }
-    public function email_feedback(Request $request)
+    public function drop_portfolio()
     {
-        $name = $request->name;
-        $email = $request->email;
-        $message = $request->message;
+        return view('frontend.drop_portfolio');
+    }
 
-        $email_feedback_data_store = EmailFeedback::create([
-            'name' => $name,
-            'email' => $email,
-            'message' => $message
+    public function upload(Request $request)
+    {
+        $file_handler = new Images();
+        $current_time = Carbon::now()->toDateTimeString();
+        $file_name = str_replace(array(':', ' ', '-'), '_', $current_time) . '_' .rand(100, 999);
+        $cv_file_path = $file_handler->uploadFile($request->file('upload_file'), $file_name);
+
+        $portfolio = Portfolio::create([
+            'developer_type' => $request->type,
+            'cv' => $cv_file_path,
         ]);
-        return redirect()->route('frontend');
+        return $this->fronted();
+    }
+    public function tutorial()
+    {
+        return view('frontend.programming_tutorial');
     }
 }

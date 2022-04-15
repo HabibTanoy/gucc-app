@@ -34,7 +34,7 @@
 
         <footer class="main-footer">
             <div class="footer-left">
-                <a href="">{{ env("APP_NAME") }}</a>
+{{--                <a href="">{{ env("APP_NAME") }}</a>--}}
             </div>
             <div class="footer-right">
             </div>

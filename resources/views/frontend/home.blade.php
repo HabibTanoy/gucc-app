@@ -21,14 +21,14 @@
 <body>
 <section class="header">
     <nav>
-        <a href="index.html"><img src="{{ asset('frontend/images/logo.png') }}"></a>
+        <a href="{{route('frontend')}}">
+            <img src="{{ asset('frontend/images/logo.png') }}">
+        </a>
         <div class="nav-links" id="navLinks">
-            <i class="fa fa-times"onclick="hideMenu()"></i>
-
-            <ul><li><a href="">Home</a></li>
+            <ul><li><a href="{{route('frontend')}}">Home</a></li>
                 <li><a href="">About</a></li>
                 <li><a href="">Gucc</a></li>
-                <li><a href="">Programming tutorials</a> <!-----change--->
+                <li><a href="{{route('cv-drop')}}">Programming tutorials</a>
                     <ul>
                         <li><a href="">C</a></li>
                         <li><a href="">Java</a></li>
@@ -36,12 +36,10 @@
                         <li><a href="">Php</a></li>
                     </ul></li>
                 <li><a href="">Web-programming</a></li>
-                <li><a href="">Drop-Portfolio</a></li>
-                <li><a href="{{route('login')}}">SignUp/Login</a></li>
+                <li><a href="{{route('portfolio')}}">Drop-Portfolio</a></li>
+                <li><a href="{{route('login')}}">Login</a></li>
                 <li><a href="">Contact</a></li>
             </ul></div>
-        <i class="fa fa-bars" onclick="showMenu()"></i>
-
     </nav>
     <div class="text-box">
         <h1>About this website</h1>
@@ -50,51 +48,24 @@
         </p><a href="" class="here-btn">Visit this website to know more</a>
     </div>
     <!-----login-signup--->
-
-
 </section>
-<!-------service(2)------>
 
-{{--<section class="service">--}}
-{{--    <h1>Service we provide</h1>--}}
-{{--    <P>In this website we provide multiple service</P>--}}
-{{--    <div class="container">--}}
-{{--        <div class="row">--}}
-{{--            @foreach($services as $service)--}}
-{{--                <div class="service-col col-lg-4 col-md-6" width="18rem" data-wow-delay="0.3s">--}}
-{{--                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">--}}
-{{--                        <h3 class="mb-3">{{$service->card_title}}</h3>--}}
-{{--                        <p class="m-0">{{$service->card_body_details}}</p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            @endforeach--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</section>--}}
-
-<!-- Service Start -->
-<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-            <h1 style="font-weight: bold">Service we provide</h1>
-{{--            <h1 class="mb-0">Custom IT Solutions for Your Successful Business</h1>--}}
-        </div>
-        <div class="row g-5">
+<section class="service" style="width: 100%;">
+    <h1>Service we provide</h1>
+    <p>In this website we provide multiple service</p>
+    <div class="container">
+        <div class="row">
             @foreach($services as $service)
-                <div class="mb-5 col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <h4 class="mb-3">{{$service->card_title}}</h4>
-                        <p class="m-0">{{$service->card_body_details}}</p>
-                        <a class="btn btn-lg btn-primary rounded" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
+            <div class="col col-md-4">
+                <div class="service-col">
+                    <h3>{{$service->card_title}}</h3>
+                    <p>{{$service->card_body_details}}</p>
                 </div>
+            </div>
             @endforeach
         </div>
     </div>
-</div>
-<!-- Service End -->
+</section>
 
 <!----club---->
 <section class="club">
@@ -105,9 +76,8 @@
     <p>Green university computer club</p>
     <div class="row">
         <div class="club-col">
-            <img src="images/gucc.png">
+            <img src="{{asset('frontend/images/gucc.png')}}">
             <div class="layer">
-                <h3>GUCC</h3>
             </div>
         </div>
     </div>
@@ -115,40 +85,30 @@
 </section>
 <!-----facilities---->
 <section class="facilities">
-    <h1>Our facilities</h1>
-    <p>lorem emsum dollar,connetc han tan bla bla</p>
-    <div class="row">
-        <div class="facilities-col">
-            <img src="images/library.png">
-            <h3>World class library</h3>
-            <p>lorem usom dollarjshkks xjmdxnchh</p>
-
-
-        </div>
-        <div class="facilities-col">
-            <img src="images/basketball.png">
-            <h3>largest playground</h3>
-            <p>lorem usom dollarjshkks xjmdxnchh</p>
-
-
-        </div>
-        <div class="facilities-col">
-            <img src="images/cafeteria.png">
-            <h3>tasty food</h3>
-            <p>lorem usom dollarjshkks xjmdxnchh</p>
-
-
+    <div class="container">
+        <h1>Our facilities</h1>
+        <p>lorem emsum dollar,connetc han tan bla bla</p>
+        <div class="row">
+            @foreach($facilities as $facility)
+            <div class="col col-lg-4">
+                <div class="card h-100 border-0 facilities-col">
+                    <img src="{{URL::asset($facility->image) }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title">{{$facility->card_title}}</h3>
+                        <p class="card-text">{{$facility->card_body_details}}</p>
+                    </div>
+                </div>
+            </div>
+            @endforeach
         </div>
     </div>
 
 </section>
 <!---call to action---->
 <section class="cta">
-    <h1>Connected with us  <br>for sharing and gaining knowledge</h1>
+    <h1>Connected with us  br>for sharing and gaining knowledge</h1>
     <a href="" class="here-btn">CONTACT US
     </a>
-
-
 </section>
 
 <!---footer--->
@@ -164,17 +124,6 @@
     <p> Made with <i class="fa fa-heart-o"></i>By Md Rakibul Islam & Awal H Mojumdar</p>
 
 </section>
-
-
-<!----------javascript for toggle menu------->
-{{--<script>--}}
-{{--    var navLinks=document.getElementById("navLinks");--}}
-{{--    function showMenu(){--}}
-{{--        navLinks.style.right="0";--}}
-{{--    }--}}
-{{--    function hideMenu(){--}}
-{{--        navLinks.style.right="-200px";--}}
-{{--</script>--}}
 
 </body>
 </html>

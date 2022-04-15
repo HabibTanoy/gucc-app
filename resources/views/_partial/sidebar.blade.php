@@ -24,6 +24,20 @@
                     <li class="@if(Request::is('service.create')) active @endif"><a class="nav-link" href="{{route('service.create')}}">Add Service</a></li>
                 </ul>
             </li>
+            <li class="dropdown">
+                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="layout"></i><span>Facilities</span></a>
+                <ul class="dropdown-menu">
+                    <li class="@if(Request::is('facilities.index')) active @endif"><a class="nav-link" href="{{route('facilities.index')}}">All Facilities</a></li>
+                    <li class="@if(Request::is('facilities.create')) active @endif"><a class="nav-link" href="{{route('facilities.create')}}">Add Facilities</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="layout"></i><span>Tutorials</span></a>
+                <ul class="dropdown-menu">
+                    <li class="@if(Request::is('program.index')) active @endif"><a class="nav-link" href="{{route('program.index')}}">All Tutorial</a></li>
+                    <li class="@if(Request::is('program.create')) active @endif"><a class="nav-link" href="{{route('program.create')}}">Add Tutorial</a></li>
+                </ul>
+            </li>
             {{-- THIS IS FOR DUMMY ONLY, CHANGE IT AS YOU NEED --}}
             <li class="dropdown @if (Route::is('home.*')) active @endif" style="visibility: hidden;">
                 <a href="{{ route('home') }}" class="nav-link">
