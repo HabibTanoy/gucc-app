@@ -31,7 +31,7 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::user()->user_type == 0){
-            return view('portfolio');
+            return $this->fronted();
         } elseif (Auth::user()->user_type == 1){
             return view('home');
         }
@@ -57,19 +57,36 @@ class HomeController extends Controller
 
     public function upload(Request $request)
     {
+        $user = Auth::user()->id;
         $file_handler = new Images();
         $current_time = Carbon::now()->toDateTimeString();
         $file_name = str_replace(array(':', ' ', '-'), '_', $current_time) . '_' .rand(100, 999);
         $cv_file_path = $file_handler->uploadFile($request->file('upload_file'), $file_name);
 
         $portfolio = Portfolio::create([
+            'user_id' => $user,
             'developer_type' => $request->type,
             'cv' => $cv_file_path,
         ]);
-        return $this->fronted();
+        return $this->cv_list();
     }
     public function tutorial()
     {
         return view('frontend.programming_tutorial');
+    }
+    public function cv_list()
+    {
+        $frontend_cv = Portfolio::with('users')
+            ->where('developer_type', '=', 1)
+            ->get();
+        $backend_cv = Portfolio::with('users')
+            ->where('developer_type', '=', 2)
+            ->get();
+        return view('frontend.cv_list', compact('frontend_cv', 'backend_cv'));
+    }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
     }
 }

@@ -28,7 +28,7 @@
             <ul><li><a href="{{route('frontend')}}">Home</a></li>
                 <li><a href="">About</a></li>
                 <li><a href="">Gucc</a></li>
-                <li><a href="{{route('cv-drop')}}">Programming tutorials</a>
+                <li><a href="{{route('tutorial-program')}}">Programming tutorials</a>
                     <ul>
                         <li><a href="">C</a></li>
                         <li><a href="">Java</a></li>
@@ -37,7 +37,11 @@
                     </ul></li>
                 <li><a href="">Web-programming</a></li>
                 <li><a href="{{route('portfolio')}}">Drop-Portfolio</a></li>
-                <li><a href="{{route('login')}}">Login</a></li>
+                @if(Auth::check())
+                    <li><a href="{{route('logout')}}">Logout</a></li>
+                @else
+                    <li><a href="{{route('login')}}">Login</a></li>
+                @endif
                 <li><a href="">Contact</a></li>
             </ul></div>
     </nav>
@@ -45,7 +49,7 @@
         <h1>About this website</h1>
         <p>
             This website is basically design as the helping hand of the Gub students
-        </p><a href="" class="here-btn">Visit this website to know more</a>
+        </p><a href="https://green.edu.bd" target="_blank" style="text-decoration: none" class="here-btn">Visit this website to know more</a>
     </div>
     <!-----login-signup--->
 </section>

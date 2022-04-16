@@ -60,8 +60,9 @@ class facilitiesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Facilities $facilities)
+    public function show($facility_id)
     {
+        $facilities = Facilities::find($facility_id);
         $facilities->update(['is_active' => !$facilities->is_active]);
         return redirect()->route('facilities.index');
     }

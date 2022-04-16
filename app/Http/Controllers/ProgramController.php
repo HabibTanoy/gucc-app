@@ -15,7 +15,7 @@ class ProgramController extends Controller
     public function index()
     {
         $programs = Tutorial::paginate(20);
-        return view('cv-drop.index', compact('programs'));
+        return view('tutorial-program.index', compact('programs'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ProgramController extends Controller
      */
     public function create()
     {
-        return view('cv-drop.create');
+        return view('tutorial-program.create');
     }
 
     /**
@@ -53,8 +53,9 @@ class ProgramController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Tutorial $tutorial)
+    public function show($tutorial_id)
     {
+        $tutorial = Tutorial::find($tutorial_id);
         $tutorial->update(['is_active' => !$tutorial->is_active]);
         return redirect()->route('program.index');
     }
@@ -69,7 +70,7 @@ class ProgramController extends Controller
     {
         $update_data = Tutorial::where('id', $id)
             ->first();
-        return view('cv-drop.update_data', compact('update_data'));
+        return view('tutorial-program.update_data', compact('update_data'));
     }
 
     /**

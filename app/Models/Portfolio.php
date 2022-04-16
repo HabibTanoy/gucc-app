@@ -11,4 +11,9 @@ class Portfolio extends Model
 
     protected $guarded = ['id'];
     protected $table = 'portfolios';
+
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 }
