@@ -35,7 +35,7 @@
                         <li><a href="">Python</a></li>
                         <li><a href="">Php</a></li>
                     </ul></li>
-                <li><a href="">Web-programming</a></li>
+                <li><a href="{{route('cv-list')}}">Portfolio List</a></li>
                 <li><a href="{{route('portfolio')}}">Drop-Portfolio</a></li>
                 @if(Auth::check())
                     <li><a href="{{route('logout')}}">Logout</a></li>
@@ -116,17 +116,35 @@
 </section>
 
 <!---footer--->
-<section class="footer">
-    <h4>About us</h4>
-    <p>gsjdemek jdhjedkedeemdk jdjej lddnjr</p>
-    <div class="icons">
-        <i class="fa fa-facebook"></i>
-        <i class="fa fa-twitter"></i>
-        <i class="fa fa-instagram"></i>
-        <i class="fa fa-linkedin"></i>
-    </div>
-    <p> Made with <i class="fa fa-heart-o"></i>By Md Rakibul Islam & Awal H Mojumdar</p>
-
+<section>
+    <footer class="bg-info p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col col-lg-4 text-center pt-5">
+                    <h3>Green University Support</h3>
+                    <p class="text-center">Here's goes something about this web</p>
+                </div>
+                <div class="col col-lg-4 text-center pt-5">
+                    <h4>About us</h4>
+                    <p>Made with</p>
+                    <h6>Md Rakibul Islam & Awal H Mojumdar</h6>
+                </div>
+                <div class="col col-lg-4 text-center pt-5">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone me-2"></i>017XXXXXXXX</p>
+                    <p><i class="fas fa-phone me-2"></i>017XXXXXXXX</p>
+                    <div class="d-flex justify-content-center align-items-center text-center">
+                        <h6>Find us on:</h6>
+                        <h6 class="p-2">
+                            <i class="fa fa-facebook-official me-1" aria-hidden="true"></i>
+                            <i class="fa fa-instagram me-1" aria-hidden="true"></i>
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </section>
 
 </body>

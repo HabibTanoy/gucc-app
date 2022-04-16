@@ -89,18 +89,20 @@ class facilitiesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $file_handler = new Images();
-        $current_time = Carbon::now()->toDateTimeString();
-        $file_name = str_replace(array(':', ' ', '-'), '_', $current_time) . '_' .rand(1000, 9999);
-        $image_file_path = $file_handler->uploadFile($request->file('facility_upload'), $file_name);
-
         $card_title = $request->card_title;
         $card_body = $request->card_body_details;
         $facilities = [
-            'image' => $image_file_path,
             'card_title' => $card_title,
             'card_body_details' => strip_tags($card_body)
         ];
+        if ($request->hasFile('facility_upload')) {
+            $file_handler = new Images();
+            $current_time = Carbon::now()->toDateTimeString();
+            $file_name = str_replace(array(':', ' ', '-'), '_', $current_time) . '_' .rand(1000, 9999);
+            $image_file_path = $file_handler->uploadFile($request->file('facility_upload'), $file_name);
+            $facilities['image'] = $image_file_path;
+        }
+
         $facilities_update = Facilities::find($id)
             ->update($facilities);
         return redirect()->route('facilities.index');

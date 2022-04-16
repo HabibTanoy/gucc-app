@@ -7,6 +7,7 @@ use App\Models\Facilities;
 use App\Models\Portfolio;
 use App\Models\Service;
 use App\Models\Slider;
+use App\Models\Tutorial;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -72,8 +73,23 @@ class HomeController extends Controller
     }
     public function tutorial()
     {
-        return view('frontend.programming_tutorial');
+        $tutorial_html = Tutorial::where('subject_type', '=', 1)
+            ->get();
+        $tutorial_js = Tutorial::where('subject_type', '=', 2)
+            ->get();
+        $tutorial_css = Tutorial::where('subject_type', '=', 3)
+            ->get();
+        $tutorial_bootstrap = Tutorial::where('subject_type', '=', 4)
+            ->get();
+        return view('frontend.programming_tutorial', compact('tutorial_html', 'tutorial_js', 'tutorial_css', 'tutorial_bootstrap'));
     }
+
+    public function video_play($id)
+    {
+        $tutorial = Tutorial::find($id);
+        return view('frontend.video_play', compact('tutorial'));
+    }
+
     public function cv_list()
     {
         $frontend_cv = Portfolio::with('users')

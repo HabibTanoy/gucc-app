@@ -25,7 +25,7 @@
                         <li><a href="">Python</a></li>
                         <li><a href="">Php</a></li>
                     </ul></li>
-                <li><a href="">Web-programming</a></li>
+                <li><a href="{{route('cv-list')}}">Portfolio List</a></li>
                 <li><a href="{{route('portfolio')}}">Drop-Portfolio</a></li>
                 @if(Auth::check())
                     <li><a href="{{route('logout')}}">Logout</a></li>
@@ -45,11 +45,11 @@
                 <div class="row text-center">
                     @foreach($frontend_cv as $frontend)
                     <div class="col col-lg-4 mb-4">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_{{$frontend->id}}">
                             <h5>{{$frontend->users['name']}}-Resume</h5>
                         </button>
                         <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal fade" id="modal_{{$frontend->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-scrollable">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -76,11 +76,11 @@
                 <div class="row text-center">
                     @foreach($backend_cv as $backend)
                     <div class="col col-lg-4 mb-4">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_{{$backend->id}}">
                             <h5>{{$backend->users['name']}}-Resume</h5>
                         </button>
                         <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal fade" id="modal_{{$backend->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-scrollable">
                                 <div class="modal-content">
                                     <div class="modal-header">
