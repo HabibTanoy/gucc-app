@@ -10,7 +10,7 @@
 </head>
 <body>
 <header>
-    <nav>
+    <nav class="nav-deco">
         <a href="{{route('frontend')}}">
             <img src="{{ asset('frontend/images/logo.png') }}">
         </a>
@@ -19,12 +19,6 @@
                 <li><a href="">About</a></li>
                 <li><a href="">Gucc</a></li>
                 <li><a href="{{route('tutorial-program')}}">Programming tutorials</a>
-                    <ul>
-                        <li><a href="">C</a></li>
-                        <li><a href="">Java</a></li>
-                        <li><a href="">Python</a></li>
-                        <li><a href="">Php</a></li>
-                    </ul></li>
                 <li><a href="{{route('cv-list')}}">Portfolio List</a></li>
                 <li><a href="{{route('portfolio')}}">Drop-Portfolio</a></li>
                 @if(Auth::check())
@@ -105,6 +99,7 @@
         </div>
     </div>
 </section>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
