@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.home_new');
 });
 
 Auth::routes();
@@ -33,5 +33,4 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::post('/portfolio', 'HomeController@upload')->name('upload-cv');
     Route::get('/tutorial', 'HomeController@tutorial')->name('tutorial-program');
 });
-
 
