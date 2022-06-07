@@ -16,6 +16,46 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('frontend.home_new');
 });
+Route::get('/about/acc', function () {
+    return view('frontend.about_acc');
+});
+Route::get('/about/rules', function () {
+    return view('frontend.rules_and_regulation');
+});
+Route::get('/about/policy', function () {
+    return view('frontend.policy');
+});
+// people route
+Route::get('/people/osa', function () {
+    return view('frontend.osa');
+});
+Route::get('/people/founder', function () {
+    return view('frontend.founders');
+});
+Route::get('/people/executive-committee', function () {
+    return view('frontend.executive_committee');
+});
+Route::get('/people/former-committee', function () {
+    return view('frontend.former_committees');
+});
+Route::get('/people/advisors', function () {
+    return view('frontend.advisors');
+});
+Route::get('/activity-news', function () {
+    return view('frontend.activity_and_news');
+});
+Route::get('/events', function () {
+    return view('frontend.events');
+});
+Route::get('/media/gallery', function () {
+    return view('frontend.gallery');
+});
+Route::get('/media/media-coverage', function () {
+    return view('frontend.media_coverage');
+});
+Route::get('/contact', function () {
+    return view('frontend.contact');
+});
 
 Auth::routes();
 
