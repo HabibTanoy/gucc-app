@@ -38,6 +38,20 @@
                     <li class="@if(Request::is('program.create')) active @endif"><a class="nav-link" href="{{route('program.create')}}">Add Tutorial</a></li>
                 </ul>
             </li>
+            <li class="dropdown">
+                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="layout"></i><span>Recent News</span></a>
+                <ul class="dropdown-menu">
+                    <li class="@if(Request::is('recent-news.index')) active @endif"><a class="nav-link" href="{{route('recent-news.index')}}">All Tutorial</a></li>
+                    <li class="@if(Request::is('recent-news.create')) active @endif"><a class="nav-link" href="{{route('recent-news.create')}}">Add Tutorial</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="layout"></i><span>Teams</span></a>
+                <ul class="dropdown-menu">
+                    <li class="@if(Request::is('teams.index')) active @endif"><a class="nav-link" href="{{route('teams.index')}}">All Tutorial</a></li>
+                    <li class="@if(Request::is('teams.create')) active @endif"><a class="nav-link" href="{{route('teams.create')}}">Add Tutorial</a></li>
+                </ul>
+            </li>
             {{-- THIS IS FOR DUMMY ONLY, CHANGE IT AS YOU NEED --}}
             <li class="dropdown @if (Route::is('home.*')) active @endif" style="visibility: hidden;">
                 <a href="{{ route('home') }}" class="nav-link">

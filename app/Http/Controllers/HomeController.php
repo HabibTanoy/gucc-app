@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use App\ImageUploads\Images;
 use App\Models\Facilities;
+use App\Models\News;
 use App\Models\Portfolio;
 use App\Models\Service;
 use App\Models\Slider;
+use App\Models\Team;
 use App\Models\Tutorial;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -46,10 +49,11 @@ class HomeController extends Controller
     public function fronted()
     {
         $images = Slider::active()->get();
-        $services = Service::where('is_active', '=', 1)
-            ->get();
         $facilities = Facilities::active()->get();
-        return view('frontend.home', compact('images', 'services', 'facilities'));
+        $news = News::active()->get();
+        $teams = Team::active()->get();
+
+        return view('frontend.home_new', compact('images', 'facilities', 'news', 'teams'));
     }
     public function drop_portfolio()
     {

@@ -13,8 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.home_new');
+//Route::get('/', function () {
+//    return view('frontend.home_new');
+//});
+Route::namespace('App\Http\Controllers')->group(function () {
+    Route::get('/', 'HomeController@fronted')->name('home');
 });
 Route::get('/about/acc', function () {
     return view('frontend.about_acc');
@@ -64,6 +67,8 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::resource('service', 'ServiceController');
     Route::resource('facilities', 'facilitiesController');
     Route::resource('program', 'ProgramController');
+    Route::resource('recent-news', 'RecentNewsController');
+    Route::resource('teams', 'TeamsController');
     Route::get('/logout', 'HomeController@logout')->name('logout');
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/index', 'HomeController@fronted')->name('frontend');

@@ -1,33 +1,22 @@
 @extends('frontend.master')
 @section('content')
-    <!-- slider -->
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="./images/image (1).jpg" alt="image">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @foreach($images as $key => $image)
+            <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
+                <img src="{{URL::asset($image->image) }}" class="d-block w-100" alt="...">
             </div>
-            <div class="swiper-slide">
-                <img src="./images/image (3).png" alt="image">
-            </div>
-            <div class="swiper-slide">
-                <img src="./images/image (18).jpg" alt="image">
-            </div>
-            <div class="swiper-slide">
-                <img src="./images/image (17).jpg" alt="image">
-            </div>
-            <div class="swiper-slide">
-                <img src="./images/image (19).jpg" alt="image">
-            </div>
+            @endforeach
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-
-
-
-
 
     <!-- main -->
     <main>
@@ -40,7 +29,7 @@
                     <!-- about text -->
                     <div class="col-md-6">
                         <h6>ABOUT</h6>
-                        <h1>AIUB Computer Club</h1>
+                        <h1 class="font-weight-bolder">AIUB Computer Club</h1>
                         <p>
                             The journey of AIUB Computer Club (ACC) started on 13th September 2012 with authorization
                             from
@@ -62,7 +51,7 @@
 
                     <!-- about image -->
                     <div class="col-md-6">
-                        <img class="img-fluid" src="./images/image (3).png" alt="">
+                        <img class="img-fluid" src="{{url('frontend/images/image_19.jpg')}}" alt="">
                     </div>
 
 
@@ -136,40 +125,18 @@
                     <div class="col-12">
                         <h1 class="text-center mb-5">Our Events</h1>
                     </div>
-
+                    @foreach($facilities as $facility)
                     <!-- card -->
                     <div class="col-12 col-md-4">
                         <a href="#">
                             <div class="event">
-                                <img class="rounded" src="./images//image (17).jpg" alt="image">
-                                <p>CS FEST</p>
+                                <img class="rounded" src="{{URL::asset($facility->image) }}" alt="image">
+                                <p>{{$facility->card_title}}</p>
                                 <div class="overlay rounded"></div>
                             </div>
                         </a>
                     </div>
-
-                    <!-- card -->
-                    <div class="col-12 col-md-4">
-                        <a href="#">
-                            <div class="event">
-                                <img class="rounded" src="./images//image (18).jpg" alt="image">
-                                <p>CS FEST</p>
-                                <div class="overlay rounded"></div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- card -->
-                    <div class="col-12 col-md-4">
-                        <a href="#">
-                            <div class="event">
-                                <img class="rounded" src="./images//image (19).jpg" alt="image">
-                                <p>CS FEST</p>
-                                <div class="overlay rounded"></div>
-                            </div>
-                        </a>
-                    </div>
-
+                    @endforeach
 
                     <!-- button -->
                     <div class="col-12">
@@ -194,16 +161,15 @@
                     </div>
 
                     <!-- card -->
+                    @foreach($news as $recent_news)
                     <div class="col-12 col-md-4">
                         <div class="card news">
-                            <img src="./images/image (1).jpg" style="height:250px" class="card-img-top" alt="image">
+                            <img src="{{URL::asset($recent_news->image) }}" style="height:250px" class="card-img-top" alt="image">
                             <div class="card-body">
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                <h5 class="card-title">AIUB Computer Club Arranged a Webinar on Blockchain, Cryptos and
-                                    NFTs
-                                </h5>
+                                <h5 class="card-title">{{$recent_news->card_title}}</h5>
                                 <p class="card-text">
-                                    A webinar on ‘Blockchain, Cryptos and NFTs – How they
+                                    {{$recent_news->card_body_details}}
                                 </p>
                                 <div class="text-center">
                                     <a href="./pages/details/recent-news.html" class="btn btn-primary">Read More</a>
@@ -211,46 +177,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- card -->
-                    <div class="col-12 col-md-4">
-                        <div class="card news">
-                            <img src="./images/image (1).jpg" style="height:250px" class="card-img-top" alt="image">
-                            <div class="card-body">
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                <h5 class="card-title">AIUB Computer Club Arranged a Webinar on Blockchain, Cryptos and
-                                    NFTs
-                                </h5>
-                                <p class="card-text">
-                                    A webinar on ‘Blockchain, Cryptos and NFTs – How they
-                                </p>
-                                <div class="text-center">
-                                    <a href="./pages/details/recent-news.html" class="btn btn-primary">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- card -->
-                    <div class="col-12 col-md-4">
-                        <div class="card news">
-                            <img src="./images/image (1).jpg" style="height:250px" class="card-img-top" alt="image">
-                            <div class="card-body">
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                <h5 class="card-title">AIUB Computer Club Arranged a Webinar on Blockchain, Cryptos and
-                                    NFTs
-                                </h5>
-                                <p class="card-text">
-                                    A webinar on ‘Blockchain, Cryptos and NFTs – How they
-                                </p>
-                                <div class="text-center">
-                                    <a href="./pages/details/recent-news.html" class="btn btn-primary">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
+                    @endforeach
                 </div> <!-- row -->
             </div> <!-- container -->
         </section> <!-- recent news -->
@@ -308,108 +235,109 @@
                     <div class="col-12">
                         <h1 class="text-center mb-5">Our Teams</h1>
                     </div>
-
+                    @foreach($teams as $team)
                     <!-- card -->
                     <div class="col-12 col-md-4">
                         <div class="team rounded">
-                            <img class="rounded" src="./images//image (1).jpg" alt="image">
+                            <img class="rounded" src="{{URL::asset($team->image) }}" alt="image">
                             <div class="overlay"></div>
                             <div class="content">
                                 <div class="text-center mb-4">
                                     <i class="fa-solid fa-code text-white"></i>
                                 </div>
-                                <h4 class="text-center text-white mb-4">ACC Development Team</h4>
+                                <h4 class="text-center text-white mb-4">{{$team->card_title}}</h4>
                                 <div class="text-center">
                                     <a href="../../pages/details/team.html" class="btn btn-primary">Load More</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    @endforeach
 
-                    <!-- card -->
-                    <div class="col-12 col-md-4">
-                        <div class="team rounded">
-                            <img class="rounded" src="./images//image (1).jpg" alt="image">
-                            <div class="overlay"></div>
-                            <div class="content">
-                                <div class="text-center mb-4">
-                                    <i class="fa-solid fa-code text-white"></i>
-                                </div>
-                                <h4 class="text-center text-white mb-4">ACC Development Team</h4>
-                                <div class="text-center">
-                                    <a href="../../pages/details/team.html" class="btn btn-primary">Load More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <!-- card -->--}}
+{{--                    <div class="col-12 col-md-4">--}}
+{{--                        <div class="team rounded">--}}
+{{--                            <img class="rounded" src="./images//image (1).jpg" alt="image">--}}
+{{--                            <div class="overlay"></div>--}}
+{{--                            <div class="content">--}}
+{{--                                <div class="text-center mb-4">--}}
+{{--                                    <i class="fa-solid fa-code text-white"></i>--}}
+{{--                                </div>--}}
+{{--                                <h4 class="text-center text-white mb-4">ACC Development Team</h4>--}}
+{{--                                <div class="text-center">--}}
+{{--                                    <a href="../../pages/details/team.html" class="btn btn-primary">Load More</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                    <!-- card -->
-                    <div class="col-12 col-md-4">
-                        <div class="team rounded">
-                            <img class="rounded" src="./images//image (1).jpg" alt="image">
-                            <div class="overlay"></div>
-                            <div class="content">
-                                <div class="text-center mb-4">
-                                    <i class="fa-solid fa-code text-white"></i>
-                                </div>
-                                <h4 class="text-center text-white mb-4">ACC Development Team</h4>
-                                <div class="text-center">
-                                    <a href="../../pages/details/team.html" class="btn btn-primary">Load More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <!-- card -->--}}
+{{--                    <div class="col-12 col-md-4">--}}
+{{--                        <div class="team rounded">--}}
+{{--                            <img class="rounded" src="./images//image (1).jpg" alt="image">--}}
+{{--                            <div class="overlay"></div>--}}
+{{--                            <div class="content">--}}
+{{--                                <div class="text-center mb-4">--}}
+{{--                                    <i class="fa-solid fa-code text-white"></i>--}}
+{{--                                </div>--}}
+{{--                                <h4 class="text-center text-white mb-4">ACC Development Team</h4>--}}
+{{--                                <div class="text-center">--}}
+{{--                                    <a href="../../pages/details/team.html" class="btn btn-primary">Load More</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                    <!-- card -->
-                    <div class="col-12 col-md-4">
-                        <div class="team rounded">
-                            <img class="rounded" src="./images//image (1).jpg" alt="image">
-                            <div class="overlay"></div>
-                            <div class="content">
-                                <div class="text-center mb-4">
-                                    <i class="fa-solid fa-code text-white"></i>
-                                </div>
-                                <h4 class="text-center text-white mb-4">ACC Development Team</h4>
-                                <div class="text-center">
-                                    <a href="../../pages/details/team.html" class="btn btn-primary">Load More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <!-- card -->--}}
+{{--                    <div class="col-12 col-md-4">--}}
+{{--                        <div class="team rounded">--}}
+{{--                            <img class="rounded" src="./images//image (1).jpg" alt="image">--}}
+{{--                            <div class="overlay"></div>--}}
+{{--                            <div class="content">--}}
+{{--                                <div class="text-center mb-4">--}}
+{{--                                    <i class="fa-solid fa-code text-white"></i>--}}
+{{--                                </div>--}}
+{{--                                <h4 class="text-center text-white mb-4">ACC Development Team</h4>--}}
+{{--                                <div class="text-center">--}}
+{{--                                    <a href="../../pages/details/team.html" class="btn btn-primary">Load More</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                    <!-- card -->
-                    <div class="col-12 col-md-4">
-                        <div class="team rounded">
-                            <img class="rounded" src="./images//image (1).jpg" alt="image">
-                            <div class="overlay"></div>
-                            <div class="content">
-                                <div class="text-center mb-4">
-                                    <i class="fa-solid fa-code text-white"></i>
-                                </div>
-                                <h4 class="text-center text-white mb-4">ACC Development Team</h4>
-                                <div class="text-center">
-                                    <a href="../../pages/details/team.html" class="btn btn-primary">Load More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <!-- card -->--}}
+{{--                    <div class="col-12 col-md-4">--}}
+{{--                        <div class="team rounded">--}}
+{{--                            <img class="rounded" src="./images//image (1).jpg" alt="image">--}}
+{{--                            <div class="overlay"></div>--}}
+{{--                            <div class="content">--}}
+{{--                                <div class="text-center mb-4">--}}
+{{--                                    <i class="fa-solid fa-code text-white"></i>--}}
+{{--                                </div>--}}
+{{--                                <h4 class="text-center text-white mb-4">ACC Development Team</h4>--}}
+{{--                                <div class="text-center">--}}
+{{--                                    <a href="../../pages/details/team.html" class="btn btn-primary">Load More</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                    <!-- card -->
-                    <div class="col-12 col-md-4">
-                        <div class="team rounded">
-                            <img class="rounded" src="./images//image (1).jpg" alt="image">
-                            <div class="overlay"></div>
-                            <div class="content">
-                                <div class="text-center mb-4">
-                                    <i class="fa-solid fa-code text-white"></i>
-                                </div>
-                                <h4 class="text-center text-white mb-4">ACC Development Team</h4>
-                                <div class="text-center">
-                                    <a href="../../pages/details/team.html" class="btn btn-primary">Load More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <!-- card -->--}}
+{{--                    <div class="col-12 col-md-4">--}}
+{{--                        <div class="team rounded">--}}
+{{--                            <img class="rounded" src="./images//image (1).jpg" alt="image">--}}
+{{--                            <div class="overlay"></div>--}}
+{{--                            <div class="content">--}}
+{{--                                <div class="text-center mb-4">--}}
+{{--                                    <i class="fa-solid fa-code text-white"></i>--}}
+{{--                                </div>--}}
+{{--                                <h4 class="text-center text-white mb-4">ACC Development Team</h4>--}}
+{{--                                <div class="text-center">--}}
+{{--                                    <a href="../../pages/details/team.html" class="btn btn-primary">Load More</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
 
                 </div> <!-- row -->

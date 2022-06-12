@@ -604,7 +604,16 @@ h6 {
     font-family: "exo-local", sans-serif;
 }
 
-section {
+/*section {*/
+/*    padding: 100px 0;*/
+/*}*/
+.bg-white {
+    padding: 100px 0;
+}
+.bg-yellow {
+    padding: 100px 0;
+}
+.bg-blue {
     padding: 100px 0;
 }
 
