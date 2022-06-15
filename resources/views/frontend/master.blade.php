@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-32x32.png">
+{{--    <link rel="icon" type="image/x-icon" href="{{ asset('./frontend/images/gub.png') }}">--}}
 
 
     <!-- font awesome cdn -->

@@ -13,55 +13,37 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('frontend.home_new');
-//});
+
 Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/', 'HomeController@fronted')->name('home');
+    // about route
+    Route::get('/people/acc','OsaFrontendController@acc')->name('acc');
+    Route::get('/people/rules','OsaFrontendController@rules')->name('rules');
+    Route::get('/people/policy','OsaFrontendController@policy')->name('policy');
+    // people route
+    Route::get('/people/osa','OsaFrontendController@osa')->name('osa');
+    Route::get('/people/founder', 'OsaFrontendController@founder')->name('founder');
+    Route::get('/people/executive-committee', 'OsaFrontendController@executive_committee')->name('executive-committee');
+    Route::get('/people/former-committee', 'OsaFrontendController@former_committee')->name('former-committee');
+    Route::get('/people/advisors', 'OsaFrontendController@advisor')->name('advisor');
+//    activity and news
+    Route::get('/people/activity-news', 'OsaFrontendController@activity_news')->name('activities-news');
+//    events
+    Route::get('/people/events', 'OsaFrontendController@events')->name('events');
+//    media
+    Route::get('/people/gallery', 'OsaFrontendController@gallery')->name('gallery');
+    Route::get('/people/media-coverage', 'OsaFrontendController@media_coverage')->name('media-coverage');
+    Route::get('/people/contact', 'OsaFrontendController@contact')->name('contact');
+    Route::get('/portfolio', 'HomeController@drop_portfolio')->name('portfolio');
+    Route::post('/portfolio', 'HomeController@upload')->name('upload-cv');
+    Route::get('/cv-list', 'HomeController@cv_list')->name('cv-list');
+    Route::get('/tutorial', 'HomeController@tutorial')->name('tutorial-program');
+    Route::get('/video/{id}', 'HomeController@video_play')->name('video');
 });
-Route::get('/about/acc', function () {
-    return view('frontend.about_acc');
-});
-Route::get('/about/rules', function () {
-    return view('frontend.rules_and_regulation');
-});
-Route::get('/about/policy', function () {
-    return view('frontend.policy');
-});
-// people route
-Route::get('/people/osa', function () {
-    return view('frontend.osa');
-});
-Route::get('/people/founder', function () {
-    return view('frontend.founders');
-});
-Route::get('/people/executive-committee', function () {
-    return view('frontend.executive_committee');
-});
-Route::get('/people/former-committee', function () {
-    return view('frontend.former_committees');
-});
-Route::get('/people/advisors', function () {
-    return view('frontend.advisors');
-});
-Route::get('/activity-news', function () {
-    return view('frontend.activity_and_news');
-});
-Route::get('/events', function () {
-    return view('frontend.events');
-});
-Route::get('/media/gallery', function () {
-    return view('frontend.gallery');
-});
-Route::get('/media/media-coverage', function () {
-    return view('frontend.media_coverage');
-});
-Route::get('/contact', function () {
-    return view('frontend.contact');
-});
+
 
 Auth::routes();
-
+// for backend dashboard
 Route::namespace('App\Http\Controllers')->group(function () {
     Route::resource('slider', 'SliderController');
     Route::resource('service', 'ServiceController');
@@ -69,13 +51,19 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::resource('program', 'ProgramController');
     Route::resource('recent-news', 'RecentNewsController');
     Route::resource('teams', 'TeamsController');
+    Route::resource('osa', 'OsaController');
+    Route::resource('special-assistant', 'SpecialAssistantController');
+    Route::resource('founder', 'FounderController');
+    Route::resource('executive-committee', 'ExecutiveCommitteeController');
+    Route::resource('ags', 'AgsController');
+    Route::resource('former-committee', 'FormerCommitteeController');
+    Route::resource('advisor', 'AdvisorController');
+    Route::resource('activity-news', 'ActivityNewsController');
+    Route::resource('events', 'EventsController');
+    Route::resource('gallery', 'GalleryController');
+    Route::resource('media-coverage', 'MediaCoverageController');
     Route::get('/logout', 'HomeController@logout')->name('logout');
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/dashboard', 'HomeController@index')->name('home');
     Route::get('/index', 'HomeController@fronted')->name('frontend');
-    Route::get('/cv-list', 'HomeController@cv_list')->name('cv-list');
-    Route::get('/video/{id}', 'HomeController@video_play')->name('video');
-    Route::get('/portfolio', 'HomeController@drop_portfolio')->name('portfolio');
-    Route::post('/portfolio', 'HomeController@upload')->name('upload-cv');
-    Route::get('/tutorial', 'HomeController@tutorial')->name('tutorial-program');
 });
 

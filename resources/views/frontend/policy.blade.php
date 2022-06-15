@@ -7,7 +7,7 @@
             <div class="row g-0">
                 <div class="col-md-12">
                     <div class="navbar-bottom-heading">
-                        <img src="../images/image (7).jpg" alt="image">
+                        <img src="{{ asset('frontend/images/banner1.jpg') }}" alt="image">
                         <div class="overlay"></div>
                         <h1 class="text-center text-white fw-bold w-100">DISCRIMINATION, INTIMIDATION, HARASSMENT AND
                             ASSAULT POLICY</h1>

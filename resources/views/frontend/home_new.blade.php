@@ -29,16 +29,16 @@
                     <!-- about text -->
                     <div class="col-md-6">
                         <h6>ABOUT</h6>
-                        <h1 class="font-weight-bolder">AIUB Computer Club</h1>
+                        <h1 class="font-weight-bolder">GUB Computer Club</h1>
                         <p>
-                            The journey of AIUB Computer Club (ACC) started on 13th September 2012 with authorization
+                            The journey of GUB Computer Club (ACC) started on 13th September 2012 with authorization
                             from
-                            the Office of Student Affairs (OSA) of AIUB. Realizing the key importance to adapt along
+                            the Office of Student Affairs (OSA) of GUB. Realizing the key importance to adapt along
                             with
                             upgrading technology, six chief founding members introduced this club with its mission and
-                            vision all set. The goal was to build up a strong community of AIUB students by offering
+                            vision all set. The goal was to build up a strong community of GUB students by offering
                             them a
-                            potential platform that deals with technology and its advancement. AIUB Computer Club holds
+                            potential platform that deals with technology and its advancement. GUB Computer Club holds
                             a
                             high status as one of the most inspiring and admiring clubs in American International
                             University-Bangladesh. They have organized many national and intra club events,
@@ -66,7 +66,7 @@
 
                     <!-- title -->
                     <div class="col-12">
-                        <h1 class="text-center mb-5">Why Join AIUB Computer Club?</h1>
+                        <h1 class="text-center mb-5">Why Join GUB Computer Club?</h1>
                     </div>
 
                     <!-- card -->
@@ -141,7 +141,7 @@
                     <!-- button -->
                     <div class="col-12">
                         <div class="d-flex justify-content-center">
-                            <a class="btn btn-primary mt-4" href="">CHECKOUT MORE OF EVENTS</a>
+                            <a class="btn btn-primary mt-4" href="{{route('events')}}">CHECKOUT MORE OF EVENTS</a>
                         </div>
                     </div>
 
@@ -169,11 +169,12 @@
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                                 <h5 class="card-title">{{$recent_news->card_title}}</h5>
                                 <p class="card-text">
-                                    {{$recent_news->card_body_details}}
+                                    {{Str::limit($recent_news->card_body_details, 50)}}
                                 </p>
                                 <div class="text-center">
                                     <a href="./pages/details/recent-news.html" class="btn btn-primary">Read More</a>
                                 </div>
+                                <p>{{$recent_news->created_at->format('M d, Y')}}</p>
                             </div>
                         </div>
                     </div>

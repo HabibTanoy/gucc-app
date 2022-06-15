@@ -7,7 +7,7 @@
             <div class="row g-0">
                 <div class="col-md-12">
                     <div class="navbar-bottom-heading">
-                        <img src="../images/image (7).jpg" alt="image">
+                        <img src="{{ asset('frontend/images/banner1.jpg') }}" alt="image">
                         <div class="overlay"></div>
                         <h1 class="text-center text-white fw-bold">ABOUT US</h1>
                     </div>
@@ -23,16 +23,16 @@
                     <div class="col-md-6">
                         <div class="row gy-4">
                             <div class="col-6">
-                                <img class="img-fluid rounded border" src="../images/image (16).jpg" alt="">
+                                <img class="img-fluid rounded border" src="{{ asset('./frontend/images/image_16.jpg') }}" alt="">
                             </div>
                             <div class="col-6">
                                 <div class="row gy-4">
                                     <div class="col-12">
-                                        <img class="img-fluid rounded border" src="../images/image (5).jpg" alt="">
+                                        <img class="img-fluid rounded border" src="{{ asset('./frontend/images/image_5.jpg') }}" alt="">
                                     </div>
-                                    <div class="col-12">
-                                        <img class="img-fluid rounded border" src="../images/image (5).jpg" alt="">
-                                    </div>
+{{--                                    <div class="col-12">--}}
+{{--                                        <img class="img-fluid rounded border" src="{{ asset('./frontend/images/image_6.jpg') }}" alt="">--}}
+{{--                                    </div>--}}
                                 </div>
                             </div>
                         </div>
@@ -43,9 +43,9 @@
                         <h6>History</h6>
                         <h1>The Begining</h1>
                         <p>
-                            On September 13, 2012 the voyage of AIUB Computer Club – ACC, had commenced. The dream was
-                            to set a platform for AIUB students to spread out the light of technology, and that dream
-                            was seen by six founder members of AIUB Computer Club. It started with a mission and vision.
+                            On September 13, 2012 the voyage of GUB Computer Club – ACC, had commenced. The dream was
+                            to set a platform for GUB students to spread out the light of technology, and that dream
+                            was seen by six founder members of GUB Computer Club. It started with a mission and vision.
                             ACC welcome every student of American International University – Bangladesh.
                         </p>
                     </div>
@@ -58,7 +58,7 @@
         <!-- celebration -->
         <section class="bg-blue">
             <div class="celebration">
-                <img src="../images//image (12).jpg" alt="image" />
+                <img src="../images/image (7).jpg" alt="image" />
                 <div class="celebration-text w-75">
                     <p class="text-center text-white">
                         ACC says to all let’s change yourself, change your society and change the country with your
@@ -81,7 +81,7 @@
                         <p>
                             In continuation, ACC is now one of the biggest and most successful clubs in American
                             International University-Bangladesh by its different activities over the years ever since
-                            the club was started with 60 active members from all different discipline within AIUB.
+                            the club was started with 60 active members from all different discipline within GUB.
                         </p>
                     </div>
 
@@ -89,16 +89,16 @@
                     <div class="col-md-6">
                         <div class="row gy-4">
                             <div class="col-6">
-                                <img class="img-fluid rounded border" src="../images/image (16).jpg" alt="">
+                                <img class="img-fluid rounded border" src="{{ asset('./frontend/images/image_2.jpg') }}" alt="">
                             </div>
                             <div class="col-6">
                                 <div class="row gy-4">
                                     <div class="col-12">
-                                        <img class="img-fluid rounded border" src="../images/image (5).jpg" alt="">
+                                        <img class="img-fluid rounded border" src="{{ asset('./frontend/images/image_8.jpg') }}" alt="">
                                     </div>
-                                    <div class="col-12">
-                                        <img class="img-fluid rounded border" src="../images/image (5).jpg" alt="">
-                                    </div>
+{{--                                    <div class="col-12">--}}
+{{--                                        <img class="img-fluid rounded border" src="{{ asset('./frontend/images/image_5.jpg') }}" alt="">--}}
+{{--                                    </div>--}}
                                 </div>
                             </div>
                         </div>
@@ -120,10 +120,10 @@
                     <div class="col-md-6">
                         <div class="row g-0">
                             <div class="col-6">
-                                <img class="img-fluid" src="../images/image (16).jpg" alt="">
+                                <img class="img-fluid" src="{{ asset('./frontend/images/image_7.jpg') }}" alt="">
                             </div>
                             <div class="col-6">
-                                <img class="img-fluid" src="../images/image (15).jpg" alt="">
+                                <img class="img-fluid" src="{{ asset('./frontend/images/image_15.jpg') }}" alt="">
                             </div>
                             <div class="col-6">
                                 <img class="img-fluid" src="../images/image (14).jpg" alt="">
@@ -139,7 +139,7 @@
                         <h6>Events and Activities</h6>
                         <h1>Our Success</h1>
                         <p>
-                            Since ACC’s inception, AIUB Computer Club (ACC) has devoted to serve AIUB’s students with
+                            Since ACC’s inception, GUB Computer Club (ACC) has devoted to serve GUB’s students with
                             full of its resources and its interests. They have successfully completed many events,
                             however, among them Computer Science Festival,featuring programming contest, gaming contest,
                             idea or concept presentation, application showcasing for mobile, web, and desktop, and
@@ -242,7 +242,7 @@
 
                     <!-- assets image -->
                     <div class="col-md-6">
-                        <img class="img-fluid" src="../images/image (5).jpg" alt="">
+                        <img class="img-fluid" src="{{ asset('./frontend/images/image_17.jpg') }}" alt="">
                     </div>
 
 
@@ -258,7 +258,7 @@
 
                     <!-- Mission image -->
                     <div class="col-md-6">
-                        <img class="img-fluid" src="../images/image (5).jpg" alt="">
+                        <img class="img-fluid" src="{{ asset('./frontend/images/image_18.jpg') }}" alt="">
                     </div>
 
                     <!-- Mission text -->
@@ -266,11 +266,11 @@
                         <h6>ACC</h6>
                         <h1>Our Mission</h1>
                         <p>
-                            AIUB Computer Club started with a mission committed to its members to introduce them to the
-                            ever-changing information and technology world. AIUB Computer Club believes one always must
+                            GUB Computer Club started with a mission committed to its members to introduce them to the
+                            ever-changing information and technology world. GUB Computer Club believes one always must
                             stay rationalized if he/she wants to subsist in today’s competitive technology driven world.
                             The club regularly arranges seminars and workshops in this regard to keep its members always
-                            updated with the latest knowledge. AIUB Computer Club wants to introduce its members to the
+                            updated with the latest knowledge. GUB Computer Club wants to introduce its members to the
                             impending challenges and help them to face it with our unity and communications.
 
                         </p>
@@ -292,17 +292,17 @@
                         <h6>ACC</h6>
                         <h1>Our Vission</h1>
                         <p>
-                            AIUB Computer Club is working with a vision to create leaders in the emerging technology
+                            GUB Computer Club is working with a vision to create leaders in the emerging technology
                             sector. Technology is the next substantial phenomenon that will lead the world towards its
-                            future. AIUB Computer Club doesn’t want its members only to get ready for the future but
-                            wishes to see in leading positions. AIUB Computer club wants its members to be a pioneer of
+                            future. GUB Computer Club doesn’t want its members only to get ready for the future but
+                            wishes to see in leading positions. GUB Computer club wants its members to be a pioneer of
                             the future.
                         </p>
                     </div>
 
                     <!-- vision image -->
                     <div class="col-md-6">
-                        <img class="img-fluid" src="../images/image (5).jpg" alt="">
+                        <img class="img-fluid" src="{{ asset('./frontend/images/image_16.jpg') }}" alt="">
                     </div>
 
 

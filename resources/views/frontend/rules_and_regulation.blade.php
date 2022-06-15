@@ -7,7 +7,7 @@
             <div class="row g-0">
                 <div class="col-md-12">
                     <div class="navbar-bottom-heading">
-                        <img src="../images/image (7).jpg" alt="image">
+                        <img src="{{ asset('frontend/images/banner1.jpg') }}" alt="image">
                         <div class="overlay"></div>
                         <h1 class="text-center text-white fw-bold">RULES AND REGULATIONS</h1>
                     </div>
@@ -42,7 +42,7 @@
                 <div class="mb-4">
                     <h5 class="fw-bold">MEMBERSHIP</h5>
                     <ul>
-                        <li>Membership is open to any students of AIUB who shares the aims of the Club and agrees to
+                        <li>Membership is open to any students of GUB who shares the aims of the Club and agrees to
                             comply with the Constitution and rules of the Club.</li>
                         <li>All members must provide valid information while the registering for the club.</li>
                     </ul>

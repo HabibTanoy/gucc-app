@@ -7,7 +7,7 @@
             <div class="row g-0">
                 <div class="col-md-12">
                     <div class="navbar-bottom-heading">
-                        <img src="../images/image (7).jpg" alt="image">
+                        <img src="{{ asset('frontend/images/banner1.jpg') }}" alt="image">
                         <div class="overlay"></div>
                         <h1 class="text-center text-white fw-bold">ACC GALLERY</h1>
                     </div>
@@ -18,39 +18,39 @@
         <section class="bg-white">
             <div class="container">
                 <div class="row gy-4">
-
+                    @foreach($galleries as $gallery)
                     <!-- card -->
                     <div class="col-12 col-md-6">
                         <a href="./details/gallery.html">
                             <div class="event">
-                                <img class="rounded" src="../images//image (17).jpg" alt="image">
-                                <p>CS FEST</p>
+                                <img class="rounded" src="{{URL::asset($gallery->image)}}" alt="image">
+                                <p>{{$gallery->card_title}}</p>
                                 <div class="overlay rounded"></div>
                             </div>
                         </a>
                     </div>
+                    @endforeach
+{{--                    <!-- card -->--}}
+{{--                    <div class="col-12 col-md-6">--}}
+{{--                        <a href="./details/gallery.html">--}}
+{{--                            <div class="event">--}}
+{{--                                <img class="rounded" src="../images//image (18).jpg" alt="image">--}}
+{{--                                <p>CS FEST</p>--}}
+{{--                                <div class="overlay rounded"></div>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
 
-                    <!-- card -->
-                    <div class="col-12 col-md-6">
-                        <a href="./details/gallery.html">
-                            <div class="event">
-                                <img class="rounded" src="../images//image (18).jpg" alt="image">
-                                <p>CS FEST</p>
-                                <div class="overlay rounded"></div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- card -->
-                    <div class="col-12 col-md-6">
-                        <a href="./details/gallery.html">
-                            <div class="event">
-                                <img class="rounded" src="../images//image (19).jpg" alt="image">
-                                <p>CS FEST</p>
-                                <div class="overlay rounded"></div>
-                            </div>
-                        </a>
-                    </div>
+{{--                    <!-- card -->--}}
+{{--                    <div class="col-12 col-md-6">--}}
+{{--                        <a href="./details/gallery.html">--}}
+{{--                            <div class="event">--}}
+{{--                                <img class="rounded" src="../images//image (19).jpg" alt="image">--}}
+{{--                                <p>CS FEST</p>--}}
+{{--                                <div class="overlay rounded"></div>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
 
 
                 </div> <!-- row -->
