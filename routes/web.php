@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/', 'HomeController@fronted')->name('home');
+    Route::get('/people/recent-view', 'OsaFrontendController@recent_view')->name('recent-view');
+    Route::get('/people/teams', 'OsaFrontendController@teams')->name('teams');
     // about route
     Route::get('/people/acc','OsaFrontendController@acc')->name('acc');
     Route::get('/people/rules','OsaFrontendController@rules')->name('rules');
@@ -32,13 +34,14 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/people/events', 'OsaFrontendController@events')->name('events');
 //    media
     Route::get('/people/gallery', 'OsaFrontendController@gallery')->name('gallery');
+    Route::get('/people/gallery-list', 'OsaFrontendController@gallery_list')->name('gallery-list');
     Route::get('/people/media-coverage', 'OsaFrontendController@media_coverage')->name('media-coverage');
     Route::get('/people/contact', 'OsaFrontendController@contact')->name('contact');
-    Route::get('/portfolio', 'HomeController@drop_portfolio')->name('portfolio');
-    Route::post('/portfolio', 'HomeController@upload')->name('upload-cv');
-    Route::get('/cv-list', 'HomeController@cv_list')->name('cv-list');
-    Route::get('/tutorial', 'HomeController@tutorial')->name('tutorial-program');
-    Route::get('/video/{id}', 'HomeController@video_play')->name('video');
+    Route::get('/portfolio', 'OsaFrontendController@drop_portfolio')->name('portfolio');
+    Route::post('/portfolio', 'OsaFrontendController@upload')->name('upload-cv');
+    Route::get('/cv-list', 'OsaFrontendController@cv_list')->name('cv-list');
+    Route::get('/tutorial', 'OsaFrontendController@tutorial')->name('tutorial-program');
+    Route::get('/video/{id}', 'OsaFrontendController@video_play')->name('video');
 });
 
 
@@ -63,7 +66,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::resource('gallery', 'GalleryController');
     Route::resource('media-coverage', 'MediaCoverageController');
     Route::get('/logout', 'HomeController@logout')->name('logout');
-    Route::get('/dashboard', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/index', 'HomeController@fronted')->name('frontend');
 });
 

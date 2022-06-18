@@ -69,33 +69,31 @@
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{route('tutorial-program')}}">Tutorial</a>
                 </li>
+                <!-- gub link -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Gub Quick Links
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="http://payment.green.edu.bd/">Gub payment</a></li>
+                        <li><a class="dropdown-item" href="https://studentportal.green.edu.bd/Account/login?ReturnUrl=%2F">Students Portal</a></li>
+                        <li><a class="dropdown-item" href="https://library.green.edu.bd/">Library</a></li>
+                        <li><a class="dropdown-item" href="https://forms.green.edu.bd/registration-slip/">Registration Slip</a></li>
+                        <li><a class="dropdown-item" href="https://applyonline.green.edu.bd/Admission/Home.aspx">Gub Online Apply</a></li>
+                    </ul>
+                </li>
                 <!-- contact -->
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{route('contact')}}">Contact</a>
                 </li>
+                @if(Auth::check())
+                    <li><a href="{{route('logout')}}">Logout</a></li>
+                @else
+                    <li><a href="{{route('login')}}">Login</a></li>
+                @endif
             </ul>
         </nav><!-- .navbar -->
-        @if(Auth::check())
-            <li><a href="{{route('logout')}}">Logout</a></li>
-        @else
-            <li><a href="{{route('login')}}">Login</a></li>
-        @endif
-{{--        <div class="position-relative ms-5">--}}
-
-{{--            <a href="#" class="mx-2 js-search-open"><i class="fa-solid fa-magnifying-glass"></i></a>--}}
-
-{{--            <i class="fa-solid fa-bars-staggered mobile-nav-toggle"></i>--}}
-
-{{--            <!-- ======= Search Form ======= -->--}}
-{{--            <div class="search-form-wrap js-search-form-wrap">--}}
-{{--                <form action="search-result.html" class="search-form">--}}
-{{--                    <i class="icon fa-solid fa-magnifying-glass"></i>--}}
-{{--                    <input type="text" placeholder="Search" class="form-control">--}}
-{{--                    <button class="btn js-search-close"><i class="fa-solid fa-xmark"></i></button>--}}
-{{--                </form>--}}
-{{--            </div><!-- End Search Form -->--}}
-
-{{--        </div>--}}
 
     </div>
 

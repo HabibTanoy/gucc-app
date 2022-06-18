@@ -32,7 +32,7 @@
                                     {{$media_coverage->card_body_details}}
                                 </p>
                                 <div class="text-center">
-                                    <a href="./details/media-coverage.html" class="btn btn-primary">Read More</a>
+                                    <a href="{{route('recent-view')}}" class="btn btn-primary">Read More</a>
                                 </div>
                             </div>
                         </div>

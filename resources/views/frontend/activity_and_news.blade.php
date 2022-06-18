@@ -36,7 +36,7 @@
                                    {{$activity_news->card_body_details}}
                                 </p>
                                 <div class="text-center">
-                                    <a href="./details/recent-news.html" class="btn btn-primary">Read More</a>
+                                    <a href="{{route('recent-view')}}" class="btn btn-primary">Read More</a>
                                 </div>
                             </div>
                         </div>

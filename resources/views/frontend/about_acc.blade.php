@@ -58,7 +58,7 @@
         <!-- celebration -->
         <section class="bg-blue">
             <div class="celebration">
-                <img src="../images/image (7).jpg" alt="image" />
+                <img src="{{ asset('frontend/images/banner1.jpg') }}" alt="image" />
                 <div class="celebration-text w-75">
                     <p class="text-center text-white">
                         ACC says to all let’s change yourself, change your society and change the country with your
@@ -96,9 +96,6 @@
                                     <div class="col-12">
                                         <img class="img-fluid rounded border" src="{{ asset('./frontend/images/image_8.jpg') }}" alt="">
                                     </div>
-{{--                                    <div class="col-12">--}}
-{{--                                        <img class="img-fluid rounded border" src="{{ asset('./frontend/images/image_5.jpg') }}" alt="">--}}
-{{--                                    </div>--}}
                                 </div>
                             </div>
                         </div>

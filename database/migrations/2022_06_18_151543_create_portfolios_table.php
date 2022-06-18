@@ -15,6 +15,7 @@ class CreatePortfoliosTable extends Migration
     {
         Schema::create('portfolios', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable();
             $table->integer('developer_type')->nullable();
             $table->string('cv');
             $table->timestamps();

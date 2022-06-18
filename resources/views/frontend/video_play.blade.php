@@ -1,8 +1,24 @@
 @extends('frontend.master')
 @section('content')
-<h3 class="mt-5 pt-5 mb-5 ms-5 text-center">Title: {{$tutorial->title}}</h3>
-<div class="text-center mb-5">
-    {!! $tutorial->link !!}
-</div>
-<h2 class="text-center">Details: {{$tutorial->body_details}}</h2>
+<main>
+    <section class="cv mb-5">
+        <div class="container">
+            <div class="row gy-4">
+                @foreach($tutorials as $tutorial)
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                            {!! $tutorial->link !!}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $tutorial->title }}</h5>
+                            <p class="card-text">{{ $tutorial->body_details }}</p>
+
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+</main> <!-- main -->
 @endsection

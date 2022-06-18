@@ -172,7 +172,7 @@
                                     {{Str::limit($recent_news->card_body_details, 50)}}
                                 </p>
                                 <div class="text-center">
-                                    <a href="./pages/details/recent-news.html" class="btn btn-primary">Read More</a>
+                                    <a href="{{route('recent-view')}}" class="btn btn-primary">Read More</a>
                                 </div>
                                 <p>{{$recent_news->created_at->format('M d, Y')}}</p>
                             </div>
@@ -248,7 +248,7 @@
                                 </div>
                                 <h4 class="text-center text-white mb-4">{{$team->card_title}}</h4>
                                 <div class="text-center">
-                                    <a href="../../pages/details/team.html" class="btn btn-primary">Load More</a>
+                                    <a href="{{route('teams')}}" class="btn btn-primary">Load More</a>
                                 </div>
                             </div>
                         </div>

@@ -21,7 +21,7 @@
                     @foreach($galleries as $gallery)
                     <!-- card -->
                     <div class="col-12 col-md-6">
-                        <a href="./details/gallery.html">
+                        <a href="{{route('gallery-list')}}">
                             <div class="event">
                                 <img class="rounded" src="{{URL::asset($gallery->image)}}" alt="image">
                                 <p>{{$gallery->card_title}}</p>
