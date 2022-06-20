@@ -17,7 +17,7 @@ class CreateTutorialsTable extends Migration
             $table->id();
             $table->integer('subject_type')->nullable();
             $table->string('title')->nullable();
-            $table->string('body_details')->nullable();
+            $table->text('body_details')->nullable();
             $table->string('link')->nullable();
             $table->boolean('is_active')->default(false);
             $table->timestamps();

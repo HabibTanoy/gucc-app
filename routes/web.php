@@ -30,6 +30,11 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/people/advisors', 'OsaFrontendController@advisor')->name('advisor');
 //    activity and news
     Route::get('/people/activity-news', 'OsaFrontendController@activity_news')->name('activities-news');
+//    blogs
+    Route::get('/people/create-blogs', 'OsaFrontendController@create_blog')->name('create-blogs');
+    Route::post('/people/create-blogs', 'OsaFrontendController@blog_store')->name('blog-store');
+    Route::get('/people/blog-list', 'OsaFrontendController@blog_show')->name('blog-list');
+    Route::get('/people/blog-view/{id}', 'OsaFrontendController@blog_view')->name('blog-view');
 //    events
     Route::get('/people/events', 'OsaFrontendController@events')->name('events');
 //    media

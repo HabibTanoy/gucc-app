@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use app\ImageUploads\Images;
+use App\ImageUploads\Images;
 use App\Models\ActivityNews;
 use App\Models\Advisor;
 use App\Models\Ags;
+use App\Models\Blog;
 use App\Models\Committee;
 use App\Models\Event;
 use App\Models\FormerCommittee;
@@ -154,5 +155,31 @@ class OsaFrontendController extends Controller
     public function gallery_list()
     {
         return view('frontend.gallery_list');
+    }
+
+    public function create_blog()
+    {
+        return view('frontend.create_blogs');
+    }
+
+    public function blog_store(Request $request)
+    {
+        Blog::create([
+            'name' => $request->name,
+            'title' => $request->title,
+            'body_details' => $request->body_details
+        ]);
+        return $this->blog_show();
+    }
+
+    public function blog_show()
+    {
+        $blogs = Blog::all();
+        return view('frontend.view_blogs', compact('blogs'));
+    }
+    public function blog_view($id)
+    {
+        $blogs = Blog::where('id', $id)->get();
+        return view('frontend.blog_view', compact('blogs'));
     }
 }

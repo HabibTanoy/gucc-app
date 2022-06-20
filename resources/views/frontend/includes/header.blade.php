@@ -69,6 +69,17 @@
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{route('tutorial-program')}}">Tutorial</a>
                 </li>
+                <!--blogs-->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        Blogs
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{{route('create-blogs')}}">Add Blogs</a></li>
+                        <li><a class="dropdown-item" href="{{route('blog-list')}}">List of Blogs</a></li>
+                    </ul>
+                </li>
                 <!-- gub link -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -87,11 +98,11 @@
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{route('contact')}}">Contact</a>
                 </li>
-                @if(Auth::check())
-                    <li><a href="{{route('logout')}}">Logout</a></li>
-                @else
-                    <li><a href="{{route('login')}}">Login</a></li>
-                @endif
+{{--                @if(Auth::check())--}}
+{{--                    <li><a href="{{route('logout')}}">Logout</a></li>--}}
+{{--                @else--}}
+{{--                    <li><a href="{{route('login')}}">Login</a></li>--}}
+{{--                @endif--}}
             </ul>
         </nav><!-- .navbar -->
 

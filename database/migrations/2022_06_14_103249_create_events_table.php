@@ -18,7 +18,7 @@ class CreateEventsTable extends Migration
             $table->string('image');
             $table->boolean('is_active')->default(false);
             $table->string('card_title')->nullable();
-            $table->string('card_body_details')->nullable();
+            $table->text('card_body_details')->nullable();
             $table->timestamps();
         });
     }
