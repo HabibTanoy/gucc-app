@@ -6,6 +6,10 @@
 
         <nav id="navbar" class="navbar ms-auto">
             <ul>
+                <!-- Home -->
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{route('main-page')}}">Home</a>
+                </li>
                 <!-- about -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"

@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/', 'HomeController@fronted')->name('home');
+    Route::get('/people/home', 'HomeController@fronted')->name('main-page');
     Route::get('/people/recent-view', 'OsaFrontendController@recent_view')->name('recent-view');
     Route::get('/people/teams', 'OsaFrontendController@teams')->name('teams');
     // about route
