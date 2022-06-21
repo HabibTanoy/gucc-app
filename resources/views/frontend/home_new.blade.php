@@ -4,7 +4,7 @@
         <div class="carousel-inner">
             @foreach($images as $key => $image)
             <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
-                <img src="{{URL::asset($image->image) }}" class="d-block w-100" alt="...">
+                <img src="{{URL::asset($image->image) }}" class="d-block w-100" height="800" alt="...">
             </div>
             @endforeach
         </div>
@@ -31,7 +31,7 @@
                         <h6>ABOUT</h6>
                         <h1 class="font-weight-bolder">GUB Computer Club</h1>
                         <p>
-                            The journey of GUB Computer Club (ACC) started on 13th September 2012 with authorization
+                            The journey of GUB Computer Club (Gucc) started on 13th September 2012 with authorization
                             from
                             the Office of Student Affairs (OSA) of GUB. Realizing the key importance to adapt along
                             with
@@ -44,7 +44,7 @@
                             University-Bangladesh. They have organized many national and intra club events,
                             nevertheless,
                             among them, events like Computer Science Festival, Cyber Gaming Festival, and Jarvis – Intra
-                            ACC
+                            Gucc
                             Carnival brought its biggest achievement and appreciation.
                         </p>
                     </div>

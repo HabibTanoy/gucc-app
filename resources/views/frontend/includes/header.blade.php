@@ -13,7 +13,7 @@
                         About
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{route('acc')}}">About ACC</a></li>
+                        <li><a class="dropdown-item" href="{{route('acc')}}">About GUCC</a></li>
                         <li><a class="dropdown-item" href="{{route('rules')}}">Rules & Regulations</a></li>
                         <li><a class="dropdown-item" href="{{route('policy')}}">Intimidation Policy</a></li>
                     </ul>
