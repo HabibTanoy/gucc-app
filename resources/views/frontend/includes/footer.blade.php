@@ -19,7 +19,9 @@
             <div class="col-12 col-md-6">
                 <div>
                     <p class="text-white text-md-end text-center">
-                        Developed by <a href="" class="text-white text-decoration-none fw-bold">Development Team</a>
+                        Developed by <a href="" class="text-white text-decoration-none fw-bold">Md Rakibul Islam
+                            and Aowal Hossen Mazumder
+                        </a>
                     </p>
 
                 </div>
