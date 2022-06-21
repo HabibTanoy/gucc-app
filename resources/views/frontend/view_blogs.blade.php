@@ -27,7 +27,7 @@
                                                 <h3 class="card-text text-center">Name: {{$blog->name}}</h3>
                                                 <h5 class="card-title">Title: {{$blog->title}}</h5>
                                                 <p class="card-text">Description:
-                                                    {{$blog->body_details}}
+                                                    {{Str::limit($blog->body_details, 200)}}
                                                 </p>
                                                 <div class="text-center">
                                                     <a href="{{route('blog-view', $blog->id)}}" class="btn btn-primary">Read More</a>
