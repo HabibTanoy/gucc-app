@@ -54,7 +54,7 @@
                         Media
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{route('gallery')}}">Gallery</a></li>
+                        <li><a class="dropdown-item" href="{{route('gallery')}}">GUCC Gallery</a></li>
                         <li><a class="dropdown-item" href="{{route('media-coverage')}}">Media Coverage</a></li>
                     </ul>
                 </li>

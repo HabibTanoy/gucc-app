@@ -9,7 +9,7 @@
                     <div class="navbar-bottom-heading">
                         <img src="{{ asset('frontend/images/banner1.jpg') }}" alt="image">
                         <div class="overlay"></div>
-                        <h1 class="text-center text-white fw-bold">ACC GALLERY</h1>
+                        <h1 class="text-center text-white fw-bold">GUCC GALLERY</h1>
                     </div>
                 </div>
             </div>
