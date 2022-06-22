@@ -3,15 +3,14 @@
 <main>
     <section class="cv mb-5">
         <div class="container">
-            <div class="row gy-4">
+            <div class="row">
                 @foreach($tutorials as $tutorial)
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
-                            {!! $tutorial->link !!}
+                <div class="col-md-6 mb-5">
+                    <div class="card" style="width: 35rem;">
+                        {!! $tutorial->link !!}
                         <div class="card-body">
-                            <h5 class="card-title">{{ $tutorial->title }}</h5>
-                            <p class="card-text">{{ $tutorial->body_details }}</p>
-
+                            <h5 class="card-title">Title: {{ $tutorial->title }}</h5>
+                            <p class="card-text">Description: {{$tutorial->body_details}}</p>
                         </div>
                     </div>
                 </div>

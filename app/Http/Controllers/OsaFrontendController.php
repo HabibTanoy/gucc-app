@@ -132,7 +132,8 @@ class OsaFrontendController extends Controller
     {
         $subjects = [
             'HTML' => 1,
-            'JAVASCRIPT' => 2
+            'JAVASCRIPT' => 2,
+            'CSS' => 3
         ];
         return view('frontend.programming_tutorial', compact('subjects'));
     }
