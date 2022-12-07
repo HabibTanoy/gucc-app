@@ -8,9 +8,9 @@
 
                     <!-- title -->
                     <div class="col-12">
+                        <!--for blog title-->
                         <h1 class="text-center mb-5 fw-bold">Blogs</h1>
                     </div>
-
                     <section class="bg-white">
                         <div class="container">
 
