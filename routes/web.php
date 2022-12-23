@@ -76,3 +76,4 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::get('/index', 'HomeController@fronted')->name('frontend');
 });
 
+// test
